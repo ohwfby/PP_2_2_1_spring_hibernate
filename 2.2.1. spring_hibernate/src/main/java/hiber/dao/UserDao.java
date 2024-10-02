@@ -9,5 +9,5 @@ public interface UserDao {
    void add(User user);
    List<User> listUsers();
    void add(Car car);
-   List<User> getUserByModelAndSeries(String model, int series);
+   User getUserByModelAndSeries(String model, int series);
 }
