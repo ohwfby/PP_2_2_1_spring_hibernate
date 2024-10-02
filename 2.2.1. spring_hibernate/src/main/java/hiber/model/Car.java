@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name ="car")
 public class Car {
     @Id()
-    @Column(name = "car_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long car_id;
 
     @Column(name="model")
@@ -16,7 +16,7 @@ public class Car {
     @Column(name="series")
     private int series;
 
-    @OneToOne()
+    @OneToOne(mappedBy = "car",fetch = FetchType.LAZY)
     private User user;
 
     public Car() {}
@@ -57,6 +57,7 @@ public class Car {
     public void setSeries(int series) {
         this.series = series;
     }
+
     public User getUser() {
         return user;
     }

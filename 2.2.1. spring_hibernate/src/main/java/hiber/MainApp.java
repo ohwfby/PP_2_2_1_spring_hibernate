@@ -21,7 +21,7 @@ public class MainApp {
       Car car1 = new Car("BMW",2020);
       userService.add(user1.setCar(car1));
 
-
+      System.out.println(userService.getUserByModelAndSeries("BMW", 2020));
       List<User> users = userService.listUsers();
       for (User userAll : users) {
          System.out.println("Id = "+ userAll.getId());

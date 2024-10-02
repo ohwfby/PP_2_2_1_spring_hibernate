@@ -34,9 +34,9 @@ public class UserServiceImp implements UserService {
    }
 
    @Override
-   public List<User> listCars() {
-      String hql = "from Car car_id LEFT OUTER JOIN FETCH  ?";
-      return null;
+   @Transactional
+   public List<User> getUserByModelAndSeries(String model, int series) {
+      return userDao.getUserByModelAndSeries(model, series);
    }
 
 
