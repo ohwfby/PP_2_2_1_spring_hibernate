@@ -1,6 +1,7 @@
 package hiber.service;
 
 import hiber.dao.UserDao;
+import hiber.model.Car;
 import hiber.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,18 @@ public class UserServiceImp implements UserService {
    public List<User> listUsers() {
       return userDao.listUsers();
    }
+
+   @Transactional(readOnly = true)
+   @Override
+   public void add(Car car) {
+      userDao.add(car);
+   }
+
+   @Override
+   public List<User> listCars() {
+      String hql = "from Car car_id LEFT OUTER JOIN FETCH  ?";
+      return null;
+   }
+
 
 }
